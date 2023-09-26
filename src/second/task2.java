@@ -24,11 +24,24 @@ public class task2 {
         for (int i = 0; i <C.size() ; i++) {
             System.out.print(C.get(i)+" ");
         }
+       /* //----------------------------------
+        System.out.println();
+        System.out.print("A:");
+        for (int i = 0; i <A.size() ; i++) {
+            System.out.print(A.get(i)+" ");
+        }
+        System.out.println();
+        System.out.print("B:");
+        for (int i = 0; i <B.size() ; i++) {
+            System.out.print(B.get(i)+" ");
+        }*/
     }
         public  static Linklist<Integer> different(Linklist<Integer> a, Linklist<Integer> b) {
             Linklist<Integer> c = new Linklist<>();
             Link<Integer> i = a.head.next;
             Link<Integer> j = b.head.next;
+            Link<Integer> p = c.head;
+            Link<Integer> q;
             while (i.next != null) {
                 int t = 0;
                 while (j.next != null) {
@@ -38,13 +51,14 @@ public class task2 {
                     }
                     j = j.next;
                 }
-                if (t >0){
-                    i = i.next;
-                }else {
-                    c.add(i.data);
-                    i =i.next;
+                if (t == 0) {
+                    q = new Link<>(i.data) ;
+                    p.next = q;
+                    p = q;
                 }
+                i = i.next;
             }
+            p.next = null;
             return c;
         }
 
