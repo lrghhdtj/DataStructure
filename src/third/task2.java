@@ -12,6 +12,9 @@ public class task2 {
         queueClass.push(3);
         queueClass.push(46);
         System.out.println("最小值："+queueClass.min(queueClass));
+        if (queueClass.contain(3)) {
+            System.out.println("队列包含元素3");
+        }
         for (int i = 0; i < queueClass.size() ; i++) {
             System.out.println(queueClass.dataindexof(queueClass,i));
         }

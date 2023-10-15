@@ -95,20 +95,5 @@ public class QueueClass <E>{
         }
         return min;
     }
-/*    public void sort (QueueClass<Integer> queueClass){
-        int i = 0;
-        Integer t = queueClass.pop(); ;
-        while (i < queueClass.size() -1 ){
-            if(t < queueClass.peek()){
-                queueClass.push(t);
-                queueClass.push(queueClass.pop());
-                i++;
-            }else {
-                queueClass.push(queueClass.peek());
-                queueClass.push(t);
-                t = queueClass.pop();
-                i++;
-            }
-        }
-    }*/
+
 }
