@@ -1,12 +1,12 @@
 package experiment2;
-public class link <E>{
+public class linknode<E>{
     E data;
-    link<E> next;
+    linknode<E> next;
 
-    public link() {
+    public linknode() {
         next = null;
     }
-    public link(E e){
+    public linknode(E e){
         data= e;
         next = null;
     }

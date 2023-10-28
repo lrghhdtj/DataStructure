@@ -1,6 +1,7 @@
 package experiment2;
 
-import experiment1.Link;
+
+
 
 public class dlinklist <E>{
     dlinkNode <E> head;
@@ -10,14 +11,14 @@ public class dlinklist <E>{
         head.next =null;
     }
     public void add(E e){
-        dlinkNode m = new dlinkNode<>(e);
-        dlinkNode n = head;
-        while (n.next != null){
-            n = n.next;
+        dlinkNode<E> n = new dlinkNode<>(e);
+        dlinkNode<E> m = head;
+        while (m.next != null){
+            m = m.next;
         }
-        n.next = m;
-        m.prior = n;
-        m.next = null;
+        m.next =n;
+        n.prior = m;
+        n.next = null;
     }
 
     public void print(){
