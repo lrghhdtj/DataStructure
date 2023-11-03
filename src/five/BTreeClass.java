@@ -75,7 +75,20 @@ public class BTreeClass {
             }
         }
     }
+    public void height(){
+        System.out.println(mindistancex(b));
+    }
 
+    private int heightx(BTNode<Character> btNode) {
+        int lchildh,rchildh;
+        if (btNode == null){
+            return 0;
+        }else {
+            lchildh = mindistancex(btNode.lchild);
+            rchildh = mindistancex(btNode.rchild);
+            return Math.max(lchildh,rchildh) +1;
+        }
+    }
     public void print_leavesnode(){
        print_leavesnodex(b);
 
@@ -92,32 +105,18 @@ public class BTreeClass {
         }
     }
     public void mindistance(){
-        mindistancex(b);
+        System.out.println(mindistancex(b)-1);
     }
 
-    private void mindistancex(BTNode<Character> btNode) {
-        Stack<BTNode> stack = new Stack<>();
-        int n =1,min =1;
-        BTNode <Character> p = btNode ;
-        while (!stack.empty() || p != null){
-            while (p != null){
-            stack.push(p);
-            p = p.lchild;
-            n++;
-                if (p.rchild == null && p.lchild == null){
-                    if (n < min){
-                        min = n;
-                    }
-                    n = 1;
-                }
-            }
-            if (!stack.empty()){
-                p = stack.pop();
-                p = p.rchild;
-            }
-
+    private int mindistancex(BTNode<Character> btNode) {
+        int lchildh,rchildh;
+        if (btNode == null){
+            return 0;
+        }else {
+            lchildh = mindistancex(btNode.lchild);
+            rchildh = mindistancex(btNode.rchild);
+            return Math.min(lchildh,rchildh) +1;
         }
-        System.out.println(min);
     }
 
 
