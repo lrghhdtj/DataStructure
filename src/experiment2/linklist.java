@@ -56,41 +56,4 @@ public class linklist<E> {
         }
         System.out.println();
     }
-/*    public link deleterepeat(link head){
-        int t = 1,seat = -1;
-        link <E> n = head , m = head.next,s;
-        if(n == null || m == null){
-            return head;
-        }
-        while (m != null){
-            if(n.data == m.data){
-                t++;
-                m = m.next;
-            }else {
-                if (t >1){
-                    if(n == head){
-                        n = m;
-                        m = m.next;
-                        head = n;
-                        seat = -2;
-                    }else {
-                        s = getindex(seat);
-                        n = s;
-                        n.next = m;
-                        n = n.next;
-                        m = m.next;
-                        seat -= t;
-                    }
-                    t = 1;
-                }else {
-                    n = n.next;
-                    m = m.next;
-                }
-                    seat++;
-            }
-        }
-
-        return n;
-    }*/
-
 }
