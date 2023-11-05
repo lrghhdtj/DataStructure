@@ -3,7 +3,7 @@ package five;
 import java.util.Stack;
 
 public class BTreeClass {
-    BTNode <Character> b ;
+    public BTNode<Character> b ;
     String bstr;
     public BTreeClass(){
         b = null;
@@ -119,6 +119,33 @@ public class BTreeClass {
         }
     }
 
+    public void print_pre(){
+        print_prex(b);
+        System.out.println();
+    }
 
+    private void print_prex(BTNode<Character> b) {
+        if (b != null){
+            System.out.print(b.data+" ");
+            print_prex(b.lchild);
+            print_prex(b.rchild);
+        }
+    }
+
+    public void print_in(){
+        print_inx(b);
+        System.out.println();
+    }
+
+    private void print_inx(BTNode<Character> b) {
+        if (b !=  null){
+            print_inx(b.lchild);
+            System.out.print(b.data+" ");
+            print_inx(b.rchild);
+        }
+    }
+public void release(){
+        b = null;
+}
 
 }
