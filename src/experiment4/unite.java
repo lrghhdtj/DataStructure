@@ -1,6 +1,6 @@
 package experiment4;
 
-public class poj {
+public class unite {
     String name;
     String nextdep;
 
