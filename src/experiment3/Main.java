@@ -44,7 +44,7 @@ public class Main {
         while (i <t.length) {
             stack.push(a[i]);
             i++;
-            while (!stack.empty() &&stack.peek().equals(b[j])){
+            while (!stack.empty() && stack.peek().equals(b[j])){
                 stack.pop();
                 j++;
             }
