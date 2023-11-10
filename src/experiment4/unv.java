@@ -28,6 +28,7 @@ public class unv {
         CTreeClass cTreeClass = new CTreeClass();
         cTreeClass.create(R);
         //(3) 采用括号表示法输出树T；
+        cTreeClass.sort(R);
         //cTreeClass.tostring();
         //(4) 求计算机学院的专业数；
 
