@@ -1,4 +1,7 @@
 package first;
+
+import P.Sqlist;
+
 public class task2 {
     public static void main(String[] args) throws Exception {
         Sqlist<Integer> L= new Sqlist<>();

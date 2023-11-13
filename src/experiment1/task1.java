@@ -1,5 +1,7 @@
 package experiment1;
 
+import P.Linklist;
+
 public class task1 {
     public static void main(String[] args) {
         Linklist<Character> linklist = new Linklist<>();

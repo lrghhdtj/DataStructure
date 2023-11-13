@@ -1,4 +1,4 @@
-package third;
+package P;
 
 public class StackClass <E>{
 

@@ -1,4 +1,4 @@
-package first;
+package P;
 public class Sqlist <E>{
     final int initcapacity = 10;
     public E [] data;

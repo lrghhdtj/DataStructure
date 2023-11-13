@@ -1,8 +1,11 @@
 package experiment2;
 
+import P.LinkNode;
+import P.Linklist;
+
 public class task {
     public static void main(String[] args) {
-        linklist list = new linklist<Integer>();
+        Linklist list = new Linklist<Integer>();
         list.add(1);list.add(1);
         list.add(2);
         list.add(3);
@@ -11,7 +14,7 @@ public class task {
         list.add(4);
         list.add(5);
         list.print();
-        linknode n =deleterepeat(list.head);
+        LinkNode n =deleterepeat(list.head);
         while (n != null) {
             System.out.print(n.data+" ");
             n = n.next;
@@ -19,11 +22,11 @@ public class task {
 
 
     }
-    public static linknode deleterepeat(linknode head){
+    public static LinkNode deleterepeat(LinkNode head){
         int t = 1;
-        linknode tmphead = new linknode<>();
+        LinkNode tmphead = new LinkNode<>();
         tmphead.next = head;
-        linknode n = head , m = head.next,s = tmphead;
+        LinkNode n = head , m = head.next,s = tmphead;
         if(n == null || m == null){
             return head;
         }

@@ -1,18 +1,18 @@
-package experiment2;
+package P;
 
 
+import P.DLinkNode;
 
-
-public class dlinklist <E>{
-    dlinkNode <E> head;
-    public dlinklist(){
-        head = new dlinkNode<E>();
+public class DLinklist<E>{
+    DLinkNode<E> head;
+    public DLinklist(){
+        head = new DLinkNode<E>();
         head.prior = null;
         head.next =null;
     }
     public void add(E e){
-        dlinkNode<E> n = new dlinkNode<>(e);
-        dlinkNode<E> m = head;
+        DLinkNode<E> n = new DLinkNode<>(e);
+        DLinkNode<E> m = head;
         while (m.next != null){
             m = m.next;
         }
@@ -22,7 +22,7 @@ public class dlinklist <E>{
     }
 
     public void print(){
-        dlinkNode n = head.next;
+        DLinkNode n = head.next;
         while (n != null){
             System.out.print(n.data+" ");
             n = n.next;
@@ -32,7 +32,7 @@ public class dlinklist <E>{
 
     public int size(){
         int len = 0;
-        dlinkNode n = head.next;
+        DLinkNode n = head.next;
         while (n != null){
             len++;
             n = n.next;
@@ -42,8 +42,8 @@ public class dlinklist <E>{
     public boolean empty(){
         return head.next == null;
     }
-    private dlinkNode<E> getindex(int i){
-        dlinkNode<E> n = head;
+    private DLinkNode<E> getindex(int i){
+        DLinkNode<E> n = head;
         int j =-1;
         while (j <i){
             j++;
@@ -55,12 +55,12 @@ public class dlinklist <E>{
         if (i <0 || i > size() -1){
             throw new IllegalArgumentException("无效索引！");
         }else {
-            dlinkNode<E> n = getindex(i);
+            DLinkNode<E> n = getindex(i);
             return (E) n.data;
         }
     }
     public int indexof(E e){
-        dlinkNode<E> n = head.next;
+        DLinkNode<E> n = head.next;
         int i = 0;
         while (n != null){
             if (n.data != e){
@@ -76,8 +76,8 @@ public class dlinklist <E>{
         if (i <0 || i > size() -1){
             throw new IllegalArgumentException("无效索引！");
         }else {
-            dlinkNode<E> m =getindex(i-1);
-            dlinkNode<E> n = new dlinkNode<>(e);
+            DLinkNode<E> m =getindex(i-1);
+            DLinkNode<E> n = new DLinkNode<>(e);
             n.next = m.next;
             m.next.prior = n;
             m.next = n;
@@ -88,7 +88,7 @@ public class dlinklist <E>{
         if (i <0 || i > size() -1){
             throw new IllegalArgumentException("无效索引！");
         }else {
-            dlinkNode<E> m =getindex(i-1);
+            DLinkNode<E> m =getindex(i-1);
             m.next =m.next.next;
             m.next.next.prior = m;
 

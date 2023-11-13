@@ -1,4 +1,4 @@
-package third;
+package P;
 
 public class QueueClass <E>{
     final int maxsize = 6;
@@ -47,6 +47,15 @@ public class QueueClass <E>{
     }
     public int size (){
         return ((rear - front + maxsize) % maxsize);
+    }
+    public void print(){
+        if (!empty()) {
+            for (int i = front+1; i <= rear; i++) {
+                System.out.println(data[i]);
+            }
+        }else {
+            System.out.println("null");
+        }
     }
 
     public boolean contain(E e){
