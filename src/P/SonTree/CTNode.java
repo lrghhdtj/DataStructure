@@ -1,8 +1,8 @@
-package experiment4;
+package P.SonTree;
 
 public class CTNode <E>{
-    public E child;
-    public CTNode next;
+     E child;
+     CTNode <E> next;
     public CTNode(){
         next = null;
     }

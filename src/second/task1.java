@@ -1,5 +1,7 @@
 package second;
 
+import P.Linklist;
+
 public class task1 {
     //有一个整数单链表L，设计一个尽可能高效算法将所有负整数的元素移到其他元素的前面。例如，L=（1，2，-1，-2，3，-3，4），移动后L=（-1，-2，-3，1，2，3，4）。
     public static void main(String[] args) {

@@ -1,9 +1,11 @@
 package experiment2;
 
+import P.DLinklist;
+
 public class dlink_main {
     public static void main(String[] args) {
         //初始化双链表h。
-        dlinklist linklist = new dlinklist<Character>();
+        DLinklist linklist = new DLinklist<Character>();
         //依次采用尾插法插入a、b、c、d、e元素。
         linklist.add('a');
         linklist.add('b');

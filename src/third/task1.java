@@ -1,5 +1,7 @@
 package third;
 
+import P.StackClass;
+
 public class task1 {
     public static boolean ismatch(String str){
         StackClass<Character> stackClass = new StackClass<>();

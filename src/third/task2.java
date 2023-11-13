@@ -1,5 +1,7 @@
 package third;
 
+import P.QueueClass;
+
 public class task2 {
     /*设计一个循环队列，用data[0..MaxSize-1]存放队列元素，用front和rear分别作为队头和队尾指针，
     另外用一个标志tag标识队列可能空（false）或可能满（true），

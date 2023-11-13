@@ -1,4 +1,4 @@
-package forth;
+package P;
 
 public class StringClass {
     final int maxsize = 100;

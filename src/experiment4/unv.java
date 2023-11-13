@@ -1,8 +1,9 @@
 package experiment4;
 
+import P.SonTree.CTreeClass;
+
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class unv {
     public static void main(String[] args) throws IOException {
@@ -28,18 +29,22 @@ public class unv {
         CTreeClass cTreeClass = new CTreeClass();
         cTreeClass.create(R);
         //(3) 采用括号表示法输出树T；
-        cTreeClass.sort(R);
-        //cTreeClass.tostring();
+        cTreeClass.tostring();
         //(4) 求计算机学院的专业数；
-
+        System.out.print("计算机学院的专业数；");
+        cTreeClass.sumson("计算机学院");
         //(5) 求计算机学院的班数；
-
+        System.out.print("计算机学院的班数:");
+        cTreeClass.sumgson("计算机学院");
         //(6) 求电信学院的学生数；
-
+        System.out.print("电信学院的学生数:");
+        cTreeClass.sumggson("电信学院");
         //(7) 求韩愈在哪所学校、哪个学院、哪个专业、哪个班（可选）；
-
+        cTreeClass.find("韩愈");
         //(8) 求哪个班级人数最多（可选）；
-
+        System.out.println();
+        cTreeClass.maxleaves();
         //(9) 销毁树。
+        cTreeClass.destory();
     }
 }

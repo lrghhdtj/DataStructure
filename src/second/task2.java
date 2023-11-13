@@ -1,5 +1,8 @@
 package second;
 
+import P.LinkNode;
+import P.Linklist;
+
 public class task2 {
    //有两个集合采用整数单链表A、B存储，设计一个算法求两个集合的差集C，C仍然用单链表存储。并给出算法的时间和空间复杂度。例如A=（1，3，2），B=（5，1，4，2），差集C=（3）。
     public static void main(String[] args) {
@@ -38,10 +41,10 @@ public class task2 {
     }
         public  static Linklist<Integer> different(Linklist<Integer> a, Linklist<Integer> b) {
             Linklist<Integer> c = new Linklist<>();
-            Link<Integer> i = a.head.next;
-            Link<Integer> j = b.head.next;
-            Link<Integer> p = c.head;
-            Link<Integer> q;
+            LinkNode<Integer> i = a.head.next;
+            LinkNode<Integer> j = b.head.next;
+            LinkNode<Integer> p = c.head;
+            LinkNode<Integer> q;
             while (i.next != null) {
                 int t = 0;
                 while (j.next != null) {
@@ -52,7 +55,7 @@ public class task2 {
                     j = j.next;
                 }
                 if (t == 0) {
-                    q = new Link<>(i.data) ;
+                    q = new LinkNode<>(i.data) ;
                     p.next = q;
                     p = q;
                 }
