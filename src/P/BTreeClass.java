@@ -1,12 +1,10 @@
 package P;
 
-import P.BTNode;
-
-import java.util.Stack;
+import java.util.*;
 
 public class BTreeClass {
     public BTNode<Character> b ;
-    String bstr;
+    String str;
     public BTreeClass(){
         b = null;
     }
@@ -54,31 +52,28 @@ public class BTreeClass {
             i++;
         }
     }
-
-
-
     public String toString(){
-        bstr = "";
+        str = "";
         toStringx(b);
-        return bstr;
+        return str;
     }
 
     private void toStringx(BTNode<Character> btNode) {
         if(btNode != null){
-            bstr += btNode.data;
+            str += btNode.data;
             if (btNode.lchild != null ||btNode.rchild != null){
-                bstr += "(";
+                str += "(";
                 toStringx(btNode.lchild);
                 if (btNode.rchild!= null){
-                    bstr += ",";
+                    str += ",";
                     toStringx(btNode.rchild);
-                    bstr += ")";
+                    str += ")";
                 }
             }
         }
     }
-    public void height(){
-        System.out.println(mindistancex(b));
+    public int height(){
+        return heightx(b);
     }
 
     private int heightx(BTNode<Character> btNode) {
@@ -86,8 +81,8 @@ public class BTreeClass {
         if (btNode == null){
             return 0;
         }else {
-            lchildh = mindistancex(btNode.lchild);
-            rchildh = mindistancex(btNode.rchild);
+            lchildh = heightx(btNode.lchild);
+            rchildh = heightx(btNode.rchild);
             return Math.max(lchildh,rchildh) +1;
         }
     }
@@ -146,8 +141,69 @@ public class BTreeClass {
             print_inx(b.rchild);
         }
     }
-public void release(){
+    public void print_level(){
+        BTNode p;
+        Queue<BTNode> queue = new LinkedList<>();
+        queue.offer(b);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            while (size > 0) {
+                p = queue.poll();
+                System.out.print(p.data + " ");
+                if (p.lchild != null) {
+                    queue.offer(p.lchild);
+                }
+                if (p.rchild != null) {
+                    queue.offer(p.rchild);
+                }
+                size--;
+            }
+        }
+    }
+
+    public void release(){
         b = null;
 }
+    public int level(BTNode btNode,char x){
+        return levelx(b,x,1);
+    }
 
+    private int levelx(BTNode<Character> b,char x,int h) {
+        if (b == null){
+            return 0;
+        }else if (b.data == x){
+            return 1;
+        }else {
+            int  l = levelx(b.lchild ,x ,h+1);
+            if (l !=0){
+                return l;
+            }else {
+                return levelx(b.rchild , x, h+1);
+            }
+        }
+    }
+    public  void creatrby_pre_in(int[] preorder, int[] inorder) {
+        BTNode<Integer> bt =createby_pre_inx(preorder,0,inorder,0,preorder.length);
+
+    }
+    private  BTNode<Integer> createby_pre_inx(int[] preorder, int i, int[] inorder, int j, int length) {
+        BTNode<Integer> b;
+        int t,p,k;
+        if (length <=  0){
+            return null;
+        }
+        t = preorder[i];
+        b = new BTNode<Integer>(t);
+        p = j;
+        while (p < j+length){
+            if (inorder[p] == t){
+                break;
+            }
+            p++;
+        }
+        k = p - j;
+        b.lchild = createby_pre_inx(preorder,i+1,inorder,j,k);
+        b.rchild = createby_pre_inx(preorder,i+k+1,inorder,p+1,length-k-1);
+        return b;
+    }
 }

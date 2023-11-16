@@ -51,5 +51,8 @@ public class AdjGraphClass {
             System.out.println();
         }
     }
+    public void minway(int s,int t){
+
+    }
 
 }
