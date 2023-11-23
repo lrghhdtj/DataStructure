@@ -14,6 +14,7 @@ public class task2 {
     }
     public static void createtree(int[] preorder, int[] inorder) {
          BTNode<Integer> bt =createtreex(preorder,0,inorder,0,preorder.length);
+         print_prex(bt);
 
     }
     private static BTNode<Integer> createtreex(int[] preorder, int i, int[] inorder, int j, int length) {
@@ -38,6 +39,12 @@ public class task2 {
     }
 
 
-
+    private static void print_prex(BTNode<Integer> b) {
+        if (b != null){
+            System.out.print(b.data+" ");
+            print_prex(b.lchild);
+            print_prex(b.rchild);
+        }
+    }
 
 }

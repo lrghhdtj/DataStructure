@@ -4,6 +4,7 @@ import P.MatGraphClass;
 
 public class task1 {
     public static void main(String[] args) {
+        //假设一个带权图G采用邻接矩阵存储。设计一个算法采用狄克斯特拉算法思路求顶点s到顶点t的最短路径长度（假设顶点s和t都是G中的顶点）。
         MatGraphClass matGraphClass = new MatGraphClass();
         int INF  = 0x3f3f3f3f;
         int [][] a = {
@@ -15,7 +16,7 @@ public class task1 {
         };
         matGraphClass.CreateMatGraph(a,5,7);
         matGraphClass.printMatGraph();
-        matGraphClass.minway(0,4);
+        matGraphClass.dijkstra(0,4);
 
     }
 }
