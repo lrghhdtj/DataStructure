@@ -14,6 +14,7 @@ public class Main {
             this.y=y;
         }
     }
+    //poj1751
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         point[] location=new point[maxv];

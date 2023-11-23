@@ -1,6 +1,7 @@
 package experiment1;
 import java.util.Scanner;
 public class multipy {
+    //poj2389 Bull Math
     public static String multipylongmun(String str1, String str2){
         int [] n = new int[str1.length()];
         int [] m = new int[str2.length()];

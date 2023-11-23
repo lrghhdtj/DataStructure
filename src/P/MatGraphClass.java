@@ -7,6 +7,7 @@ public class MatGraphClass {
     public int n;
     int e;
     String []vexs;
+    int [] visted = new int[maxv];
     public MatGraphClass(){
         edges = new int[maxv][maxv];
         vexs = new String[maxv];
@@ -33,7 +34,19 @@ public class MatGraphClass {
             System.out.println();
         }
     }
-    public void minway(int v, int t){
+    public void Dfs(int v){
+        visted[v] = 1;
+        System.out.println(v +" ");
+        for (int w = 0; w < n; w++) {
+            if (edges[v][w] != 0 && edges[v][w] != INF) {
+                if (visted[w] == 0){
+                    Dfs(w);
+                }
+            }
+        }
+
+    }
+    public void dijkstra(int v, int t){
         int [] dist = new int[maxv];
         int [] path = new int[maxv];
         int [] s = new int[maxv];
