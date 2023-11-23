@@ -86,6 +86,7 @@ public class ATClass {
     }
     public void print_in(){
         print_inx(r);
+        System.out.println();
     }
 
     private void print_inx(ANode r) {
@@ -97,11 +98,12 @@ public class ATClass {
     }
     public void print_pre(){
         print_prex(r);
+        System.out.println();
     }
 
     private void print_prex(ANode r) {
         if (r != null){
-            System.out.println(r.data+" ");
+            System.out.print(r.data+" ");
             print_prex(r.lchild);
             print_prex(r.rchild);
         }
