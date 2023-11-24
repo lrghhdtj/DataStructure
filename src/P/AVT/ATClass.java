@@ -2,7 +2,6 @@ package P.AVT;
 
 public class ATClass {
     ANode r;
-    int mun;
     public  ATClass (){
         r = null;
     }
@@ -18,9 +17,9 @@ public class ATClass {
             aNode.lchild = inserx(aNode.lchild,k);
         }else if (aNode.data < k){
             aNode.rchild = inserx(aNode.rchild,k);
-        }
+        }else {
         aNode.height = Math.max(getheight(aNode.lchild), getheight(aNode.rchild)) +1;
-        mun++;
+        }
         return balance(aNode);
     }
 
@@ -86,6 +85,7 @@ public class ATClass {
     }
     public void print_in(){
         print_inx(r);
+        System.out.println();
     }
 
     private void print_inx(ANode r) {
@@ -97,11 +97,12 @@ public class ATClass {
     }
     public void print_pre(){
         print_prex(r);
+        System.out.println();
     }
 
     private void print_prex(ANode r) {
         if (r != null){
-            System.out.println(r.data+" ");
+            System.out.print(r.data+" ");
             print_prex(r.lchild);
             print_prex(r.rchild);
         }
