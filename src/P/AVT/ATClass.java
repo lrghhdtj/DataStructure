@@ -2,7 +2,6 @@ package P.AVT;
 
 public class ATClass {
     ANode r;
-    int mun;
     public  ATClass (){
         r = null;
     }
@@ -18,9 +17,9 @@ public class ATClass {
             aNode.lchild = inserx(aNode.lchild,k);
         }else if (aNode.data < k){
             aNode.rchild = inserx(aNode.rchild,k);
+        }else {
+            aNode.height = Math.max(getheight(aNode.lchild), getheight(aNode.rchild)) + 1;
         }
-        aNode.height = Math.max(getheight(aNode.lchild), getheight(aNode.rchild)) +1;
-        mun++;
         return balance(aNode);
     }
 
