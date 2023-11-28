@@ -18,7 +18,9 @@ public class ATClass {
         }else if (aNode.data < k){
             aNode.rchild = inserx(aNode.rchild,k);
         }else {
-        aNode.height = Math.max(getheight(aNode.lchild), getheight(aNode.rchild)) +1;
+
+            aNode.height = Math.max(getheight(aNode.lchild), getheight(aNode.rchild)) + 1;
+   
         }
         return balance(aNode);
     }

@@ -1,7 +1,7 @@
 package P.BST;
 
 public class BstNode {
-    public int key;
+    public double key;
     public BstNode lchild;
     public  BstNode rchild;
     public BstNode(){

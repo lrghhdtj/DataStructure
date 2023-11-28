@@ -13,7 +13,9 @@ public class task1 {
         atClass.inser(1);
         atClass.inser(3);
         atClass.inser(6);
+        System.out.print("中序遍历：");
         atClass.print_in();
+        System.out.print("前序遍历：");
         atClass.print_pre();
 
     }
