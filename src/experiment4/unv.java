@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class unv {
     public static void main(String[] args) throws IOException {
         //(1) 从abc.txt文件读数据到R数组中；
-        BufferedReader in = new BufferedReader(new FileReader("D:\\create\\IDEA\\IntelliJ IDEA 2023.1.2\\products\\DataStructure\\src\\src\\experiment4\\abc.txt"));
+        BufferedReader in = new BufferedReader(new FileReader("\\src\\experiment4\\abc.txt"));
         var aline = in.readLine();
         String n [];
         ArrayList<unite> list = new ArrayList<>();

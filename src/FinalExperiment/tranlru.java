@@ -1,4 +1,4 @@
-package finalexperiment;
+package FinalExperiment;
 
 public class tranlru {
 }
